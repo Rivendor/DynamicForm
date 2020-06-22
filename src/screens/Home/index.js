@@ -9,28 +9,28 @@ import Form from '../../components/Form'
 import styles from './styles'
 
 export default function Home() {
-    const [form, setForm] = useState([])
-    const [cont, setCont] = useState(0)
+    const [state, setState] = useState([])
 
     useEffect(() => {
-        setForm([0])
+        console.log('Mounted')
+        setState(state => [0])
+        return () => console.log('Unmounted')
     }, [])
 
     return (
         <View style={styles.container}>
-            <Form />
             {
-                form.map(() => {
-                    return <Form />
+                state.map((index) => {
+                    return <Form key={index} />
                 })
             }
             <Button
                 text='+'
                 onPress={() => {
-                    setCont(cont + 1)
-                    console.log('Cont: \n' + cont)
-                    setForm(form.push(cont))
-                    console.log('Form: \n' + form)
+                    const old = [...state]
+                    setState(state => [...old, old.length + 1])
+                    console.log('Last Index: \n' + state.length)
+                    console.log('Cont: \n' + state)
                 }}
             />
         </View>
