@@ -33,6 +33,15 @@ export default function Home() {
                     console.log('Cont: \n' + state)
                 }}
             />
+            <Button
+                text='-'
+                onPress={() => {
+                    const old = [...state]
+                    console.log('Popped: \n' + old.pop())
+                    setState(state => [...old])
+                    console.log('Cont: \n' + state)
+                }}
+            />
         </View>
     )
 }
