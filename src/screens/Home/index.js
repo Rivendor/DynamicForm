@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, ScrollView } from 'react-native'
 
 // Components
 import Button from '../../components/Button'
@@ -19,29 +19,35 @@ export default function Home() {
 
     return (
         <View style={styles.container}>
-            {
-                state.map((index) => {
-                    return <Form key={index} />
-                })
-            }
-            <Button
-                text='+'
-                onPress={() => {
-                    const old = [...state]
-                    setState(state => [...old, old.length + 1])
-                    console.log('Last Index: \n' + state.length)
-                    console.log('Cont: \n' + state)
-                }}
-            />
-            <Button
-                text='-'
-                onPress={() => {
-                    const old = [...state]
-                    console.log('Popped: \n' + old.pop())
-                    setState(state => [...old])
-                    console.log('Cont: \n' + state)
-                }}
-            />
+            <ScrollView style={styles.scrollContainer}>
+                {
+                    state.map((index) => {
+                        return <Form key={index} />
+                    })
+                }
+                <View style={styles.buttonRow}>
+                    <Button
+                        text='+'
+                        width={60}
+                        onPress={() => {
+                            const old = [...state]
+                            setState(state => [...old, old.length])
+                        }}
+                    />
+                    <Button
+                        text='-'
+                        width={60}
+                        onPress={() => {
+                            const old = [...state]
+                            old.pop()
+                            setState(state => [...old])
+                        }}
+                    />
+                </View>
+            </ScrollView>
+            <View style={styles.sendView}>
+                <Button text='Enviar' width={100} />
+            </View>
         </View>
     )
 }

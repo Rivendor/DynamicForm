@@ -7,10 +7,16 @@ import Input from './Input'
 const Form = () => {
     return (
         <View style={styles.formContainer}>
-            <Text>Hullo</Text>
             <View style={styles.row}>
-                <Input width={90} />
-                <Input width={210} />
+
+                <View>
+                    <Text style={styles.inputLabel}>Cod.:</Text>
+                    <Input width={90} />
+                </View>
+                <View>
+                    <Text style={styles.inputLabel}>Material:</Text>
+                    <Input width={210} />
+                </View>
             </View>
         </View>
     )
@@ -22,16 +28,18 @@ const styles = StyleSheet.create({
     formContainer: {
         alignItems: 'flex-start',
         justifyContent: 'space-between',
+        backgroundColor: '#3d597a',
         padding: 10,
-        marginTop: 20,
-        marginBottom: 20,
-        height: 100,
+        marginBottom: 5,
+        height: 'auto',
         width: '100%',
-        borderRadius: 10,
         overflow: 'hidden',
-        elevation: 2,
+        borderRadius: 3
     },
     row: {
         flexDirection: 'row',
+    },
+    inputLabel: {
+        color: 'white'
     }
 })

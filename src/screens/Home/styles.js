@@ -4,12 +4,23 @@ import { StyleSheet } from 'react-native'
 export default StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: 40,
-        paddingBottom: 40,
-        paddingRight: 10,
-        paddingLeft: 10,
-        backgroundColor: '#fff',
+        backgroundColor: '#29405c',
         alignItems: 'flex-start',
         justifyContent: 'flex-start',
     },
+    buttonRow: {
+        flexDirection: 'row',
+    },
+    scrollContainer: {
+        width: '100%',
+        paddingTop: 40,
+        marginBottom: 40,
+        paddingRight: 4,
+        paddingLeft: 4,
+    },
+    sendView: {
+        backgroundColor: '#3d597a',
+        height: 'auto',
+        width: '100%',
+    }
 })
