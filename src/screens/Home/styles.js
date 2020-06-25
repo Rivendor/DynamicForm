@@ -1,4 +1,3 @@
-import React from 'react'
 import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
@@ -10,17 +9,21 @@ export default StyleSheet.create({
     },
     buttonRow: {
         flexDirection: 'row',
+        marginHorizontal: 4
     },
     scrollContainer: {
+        flex: 1,
+        justifyContent: 'space-between',
         width: '100%',
-        paddingTop: 40,
-        marginBottom: 40,
-        paddingRight: 4,
-        paddingLeft: 4,
+        height: 'auto',
+        paddingTop: 10,
     },
     sendView: {
         backgroundColor: '#3d597a',
-        height: 'auto',
+        alignContent: 'flex-start',
+        height: 50,
         width: '100%',
+        marginTop: 5,
+        padding: 5
     }
 })
