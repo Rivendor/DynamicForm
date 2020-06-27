@@ -1,15 +1,17 @@
 import React from 'react'
-import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
+
+// Components
+import DrawerButton from '../components/DrawerButton'
 
 // Screens
 import Home from '../screens/Home'
+import Confirmation from '../screens/Confirmation'
 
 const Stack = createStackNavigator();
 
-export default function Navigation () {
+export default function MainNav () {
     return (
-        <NavigationContainer>
             <Stack.Navigator
                 initialRouteName="Home"
                 screenOptions={{
@@ -17,6 +19,7 @@ export default function Navigation () {
                         backgroundColor: '#3d597a',
                     },
                     headerTintColor: 'white',
+                    headerLeft: () => <DrawerButton />
                 }}
             >
                 <Stack.Screen
@@ -25,7 +28,12 @@ export default function Navigation () {
                         title: 'Home',
                     }}
                 />
+                <Stack.Screen
+                    name='Confirmation' component={Confirmation}
+                    options={{
+                        title: 'Confirmação',
+                    }}
+                />
             </Stack.Navigator>
-        </NavigationContainer>
     )
 }

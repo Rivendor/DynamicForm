@@ -7,17 +7,6 @@ export default StyleSheet.create({
         alignItems: 'flex-start',
         justifyContent: 'flex-start',
     },
-    buttonRow: {
-        flexDirection: 'row',
-        marginHorizontal: 4
-    },
-    scrollContainer: {
-        flex: 1,
-        justifyContent: 'space-between',
-        width: '100%',
-        height: 'auto',
-        paddingTop: 10,
-    },
     sendView: {
         backgroundColor: '#3d597a',
         alignContent: 'flex-start',
@@ -58,4 +47,14 @@ export default StyleSheet.create({
         width: '100%',
         height: '100%'
     },
+    scrollContainer: {
+        flex: 1,
+        justifyContent: 'space-between',
+        width: '100%',
+        height: 'auto',
+        paddingTop: 10,
+    },
+    listContainer: {
+        height: 'auto'
+    }
 })

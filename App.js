@@ -1,10 +1,10 @@
 import React from 'react';
 
 // Navigation
-import Navigation from './src/navigation/navigation'
+import DrawerNav from './src/navigation/DrawerNav'
 
 export default function App() {
   return (
-    <Navigation />
+    <DrawerNav />
   );
 }
