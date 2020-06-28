@@ -10,11 +10,12 @@ export default StyleSheet.create({
     sendView: {
         backgroundColor: '#3d597a',
         alignContent: 'flex-start',
+        justifyContent: 'space-between',
         height: 50,
         width: '100%',
         marginTop: 5,
         padding: 5,
-        flexDirection: 'row-reverse'
+        flexDirection: 'row'
     },
     formContainer: {
         alignItems: 'flex-start',
@@ -31,6 +32,18 @@ export default StyleSheet.create({
     row: {
         flexDirection: 'row',
     },
+    textContainer: {
+        backgroundColor: '#3d597a',
+        alignItems: 'flex-start',
+        justifyContent: 'flex-start',
+        padding: 5,
+        marginBottom: 5,
+        marginHorizontal: 4,
+        width: '98%',
+        height: 'auto',
+        overflow: 'hidden',
+        borderRadius: 3
+    },
     inputLabel: {
         color: 'white'
     },
@@ -43,9 +56,8 @@ export default StyleSheet.create({
         backgroundColor: 'white',
         borderRadius: 3
     },
-    inputText: {
-        width: '100%',
-        height: '100%'
+    text: {
+        color: 'white'
     },
     scrollContainer: {
         flex: 1,

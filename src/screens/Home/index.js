@@ -9,23 +9,29 @@ import Button from '../../components/Button'
 import styles from './styles'
 
 export default function Home({ navigation }) {
-    const [state, setState] = useState([])
+    const [state, setState] = useState([0])
 
     useEffect(() => {
-        console.log('Mounted')
-        setState(state => [0])
-        return () => console.log('Unmounted')
+        console.log('Mounted Home')
+        return () => console.log('Unmounted Home')
     }, [])
 
     return (
         <View style={styles.container}>
             <Formik
-                initialValues={{ collection: [
-                    { cod: '', name: '', local: '' },
-                ], }}
+                initialValues={{
+                    collection: [
+                        { cod: '', name: '', local: '' },
+                    ],
+                }}
                 onSubmit={values => {
-                    console.log(values)
-                    navigation.navigate('Confirmation', { array: values.collection})
+                    console.log(
+                        `Submitting to Confirmation:
+                        Cod: ${values.collection[0].cod}
+                        Name: ${values.collection[0].name}
+                        Local: ${values.collection[0].local}`
+                    )
+                    navigation.navigate('Confirmation', { arr: values })
                 }}
             >
                 {({ values, handleChange, handleSubmit }) => (
@@ -40,7 +46,10 @@ export default function Home({ navigation }) {
                                                 <View style={[styles.inputShape, { width: 110 }]}>
                                                     <TextInput
                                                         style={styles.inputText}
+                                                        defaultValue=''
                                                         onChangeText={handleChange(`collection[${index}].cod`)}
+                                                        maxLength={8}
+                                                        keyboardType={'numeric'}
                                                     />
                                                 </View>
                                             </View>
@@ -49,19 +58,23 @@ export default function Home({ navigation }) {
                                                 <View style={[styles.inputShape, { width: 210 }]}>
                                                     <TextInput
                                                         style={styles.inputText}
+                                                        defaultValue=''
                                                         onChangeText={handleChange(`collection[${index}].name`)}
+                                                        maxLength={22}
                                                     />
                                                 </View>
                                             </View>
                                         </View>
                                         <View>
-                                                <Text style={styles.inputLabel}>Local:</Text>
-                                                <View style={[styles.inputShape, { width: 330 }]}>
-                                                    <TextInput
-                                                        style={styles.inputText}
-                                                        onChangeText={handleChange(`collection[${index}].local`)}
-                                                    />
-                                                </View>
+                                            <Text style={styles.inputLabel}>Local:</Text>
+                                            <View style={[styles.inputShape, { width: 330 }]}>
+                                                <TextInput
+                                                    style={styles.inputText}
+                                                    defaultValue=''
+                                                    onChangeText={handleChange(`collection[${index}].local`)}
+                                                    maxLength={40}
+                                                />
+                                            </View>
                                         </View>
                                     </View>
                                 })
