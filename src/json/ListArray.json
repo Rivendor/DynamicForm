@@ -1,0 +1,34 @@
+{   
+    "list": [
+        {
+            "id": 0,
+            "collection": [
+                {
+                    "cod": 12312,
+                    "name": "Yaahoo",
+                    "local": "yeehaw"
+                },
+                {
+                    "cod": 99586,
+                    "name": "Concreto Armado",
+                    "local": "Terceiro Piso"
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "collection": [
+                {
+                    "cod": 55674,
+                    "name": "Madeira Vertical Quadrática",
+                    "local": "Subsolo Torre 45"
+                },
+                {
+                    "cod": 13185,
+                    "name": "Jonas",
+                    "local": "Martha"
+                }
+            ]
+        }
+    ]
+}

@@ -1,5 +1,5 @@
 # DynamicForm
-A React Native App that creates form inputs dynamically using Formik, React Navigation and React Hooks.
+A React Native App that creates form inputs dynamically using Expo, Formik, React Navigation and React Hooks.
 # How to run App
 * You must have NodeJs installed in your PC;
 * Run `npm install expo-cli --global` on a terminal;

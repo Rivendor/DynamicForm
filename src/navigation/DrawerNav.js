@@ -4,6 +4,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer'
 
 // Navigators
 import MainNav from './MainNav'
+import PreviousNav from './PreviousNav'
 
 const Drawer = createDrawerNavigator();
 
@@ -30,6 +31,13 @@ export default function DrawerNav () {
                     component={MainNav}
                     options={{
                         title: 'Home'
+                    }}
+                />
+                <Drawer.Screen
+                    name="PreviousNav"
+                    component={PreviousNav}
+                    options={{
+                        title: 'Histórico'
                     }}
                 />
             </Drawer.Navigator>
